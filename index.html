@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Lpc speech anylisis mathlab : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Lpc speech anylisis mathlab</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/arade/LPC_Speech_Anylisis_MathLab">View on GitHub</a>
+
+          <h1 id="project_title">Lpc speech anylisis mathlab</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/arade/LPC_Speech_Anylisis_MathLab/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/arade/LPC_Speech_Anylisis_MathLab/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>On the project I perform analysis on a given speech signal (sx119.pcm speech in raw PCM format, with sampling frequency of 16 kHz, and samples represented as 16-bit integers shorts). The analysis was done using MATLAB. 
+I will perform the first analysis according to the given specifications. </p>
+
+<ul>
+<li>Window type: Hamming </li>
+<li>Window length (frame length): 20 milliseconds </li>
+<li>LPC analysis step: 5 milliseconds (i.e. 200 Hz analysis rate) </li>
+<li>LPC method: autocorrelation </li>
+<li>LPC prediction order: 16
+For each frame of the signal I compute: </li>
+<li>The vector a of the LPC coefficients </li>
+<li>The prediction gain G </li>
+<li>The prediction error sequence </li>
+<li>The (truncated) impulse response corresponding to the LPC all-pole model </li>
+<li>The LPC envelope (amplitude, in logarithmic scale, of the frequency response of the all-pole model) </li>
+</ul><p>The second analysis will be Fundamental frequency (pitch) computation: </p>
+
+<ul>
+<li>I write a procedure to compute, for each frame, the normalized autocorrelation r’(m)=r(m)/r(0), for 0&lt;m&lt;M (with M equivalent to 50 ms). </li>
+<li>For the interval specified in above,I check graphically the position of the peak of r’(m) satisfying Mmin&lt;m&lt; Mmax (where Mmin and Mmax are equivalent to 400 Hz e 50 Hz, respectively) and state whether it may correspond to the pitch period. </li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Lpc speech anylisis mathlab maintained by <a href="https://github.com/arade">arade</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
